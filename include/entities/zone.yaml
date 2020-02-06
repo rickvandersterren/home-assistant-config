@@ -1,0 +1,11 @@
+- name:      Work Rick
+  latitude:  !secret zone_work_rick_latitude
+  longitude: !secret zone_work_rick_longitude
+  radius:    150
+  icon:      mdi:office-building
+
+- name:      Work Rebecca
+  latitude:  !secret zone_work_rebecca_latitude
+  longitude: !secret zone_work_rebecca_longitude
+  radius:    150
+  icon:      mdi:office-building

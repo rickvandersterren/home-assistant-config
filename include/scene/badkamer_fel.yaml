@@ -1,0 +1,7 @@
+name: Badkamer Fel
+entities:
+  light.badkamer_spots:
+    state:      on
+    brightness: 254
+    color_temp: 370
+    transition: 1

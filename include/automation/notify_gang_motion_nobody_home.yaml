@@ -1,0 +1,30 @@
+- alias: Notify on gang motion when nobody home
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.fibaro_system_fgms001_zw5_motion_sensor_sensor
+    to: 'on'
+  condition:
+    - condition: state
+      entity_id: group.someone_home
+      state: 'not_home'
+  action:
+  - service: notify.mobile_app_rick_iphone11
+    data:
+      title: "Niemand thuis - Gang motion" 
+      message: "Motion gedetecteerd, niemand thuis!"
+
+- alias: Notify on voordeur open when nobody home
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.magnet_gang_voordeur_contact
+    to: 'on'
+  condition:
+    - condition: state
+      entity_id: group.someone_home
+      state: 'not_home'
+  action:
+  - service: notify.mobile_app_rick_iphone11
+    data:
+      title: "Niemand thuis - Voordeur open"
+      message: "Motion gedetecteerd, niemand thuis!"
+

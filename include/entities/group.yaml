@@ -1,0 +1,19 @@
+someone_home:
+    name: Iemand thuis
+    entities:
+      - person.rick
+      - person.rebecca
+
+woonkamer_lights:
+    name: Woonkamer Lampen
+    entities:
+      - light.keuken_spot_1
+      - light.keuken_spot_2
+      - light.keuken_spot_3
+      - light.woonkamer_spot_1
+      - light.woonkamer_spot_2
+      - light.woonkamer_spot_3
+      - light.tv_lamp
+      - light.staande_lamp
+      - light.led_tv_meubel
+      - light.fibaro_system_fgd212_dimmer_2_level_2

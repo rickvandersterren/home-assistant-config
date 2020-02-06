@@ -1,0 +1,20 @@
+binary_sensor.fibaro_system_fgms001_zw5_motion_sensor_sensor:
+  icon: mdi:walk
+light.led_tv_meubel: {}
+binary_sensor.wasmachine_status:
+  icon: mdi:washing-machine
+switch.sonoff_plug2:
+  icon: mdi:air-filter
+switch.sonoff_plug1:
+  icon: mdi:fountain
+switch.sonoff_ventilatie:
+  icon: mdi:fan
+person.rick:
+  entity_picture: '"https://www.rickes.nl/images/avatar.jpg"'
+device_tracker.bimmer:
+  entity_picture: '"https://cdn.webshopapp.com/shops/140810/files/67207660/890x890x1/exterieur.jpg"'
+  friendly_name: Bimmer
+person.rebecca:
+  entity_picture: '"https://pbs.twimg.com/profile_images/897429137958350848/srWELOKn_400x400.jpg"'
+group.someone_home:
+  entity_picture: https://pbs.twimg.com/media/D0fYhXqXcAE8mwb.jpg

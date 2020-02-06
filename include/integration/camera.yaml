@@ -1,0 +1,6 @@
+- platform:   synology
+  url:        !secret camera_synology_url
+  username:   !secret camera_synology_user
+  password:   !secret camera_synology_pass
+  timeout:    15
+  verify_ssl: false

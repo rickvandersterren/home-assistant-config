@@ -1,0 +1,17 @@
+---
+dolby_demo:
+  sequence:
+    - service: tts.google_translate_say
+      entity_id: media_player.sonos_beam
+      data:
+        message: "Oke, we starten de Dolby Demo"
+    - delay: '00:00:03'
+    - service: media_player.select_source
+      entity_id: media_player.sonos_beam
+      data:
+        source: TV
+    - service: media_player.play_media
+      entity_id: media_player.woonkamer_chromecast
+      data:
+        media_content_id: "http://download.dolby.com/us/en/test-tones/dolby-atmos-trailer_amaze_1080.mp4"
+        media_content_type: video

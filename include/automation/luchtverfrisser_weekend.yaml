@@ -1,0 +1,25 @@
+- alias: Luchtverfrisser On Weekend
+  trigger:
+  - platform: time
+    at: '12:00:00'
+  condition:
+    condition: time
+    weekday:
+    - sat
+    - sun
+  action:
+    service: switch.turn_on
+    entity_id: switch.sonoff_plug2
+
+- alias: Luchtverfrisser Off Weekend
+  trigger:
+  - platform: time
+    at: '23:00:00'
+  condition:
+    condition: time
+    weekday:
+    - sat
+    - sun
+  action:
+    service: switch.turn_off
+    entity_id: switch.sonoff_plug2

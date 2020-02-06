@@ -1,0 +1,11 @@
+- platform: rest
+  resource: !secret parkeergarage_json
+  name: Garage JSON
+  json_attributes:
+    - IP
+    - timestamp
+  username: !secret parkeergarage_user
+  password: !secret parkeergarage_pass
+  authentication: basic
+  verify_ssl: true
+  value_template: 'OK'

@@ -1,0 +1,30 @@
+- alias: Woonkamer aan iOS Action
+  trigger:
+  - platform: event
+    event_type: ios.action_fired
+    event_data:
+      actionName: Woonkamer_aan
+  action:
+  -  service: scene.turn_on
+     entity_id: scene.woonkamer_aan
+
+- alias: Woonkamer uit iOS Action
+  trigger:
+  - platform: event
+    event_type: ios.action_fired
+    event_data:
+      actionName: Woonkamer_uit
+  action:
+  -  service: scene.turn_on
+     entity_id: scene.woonkamer_uit
+
+- alias: Woonkamer Film TV iOS Action
+  trigger:
+  - platform: event
+    event_type: ios.action_fired
+    event_data:
+      actionName: Woonkamer_filmtv
+  action:
+  -  service: scene.turn_on
+     entity_id: scene.woonkamer_tv_film
+

@@ -1,0 +1,36 @@
+- alias: Gangkast On After Door Open
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.gangkast_deur
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: light.gangkast
+    state: 'off'
+  action:
+  - service: light.turn_on
+    entity_id: light.gangkast
+    data_template:
+      brightness: 255
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.gangkast_automatic
+
+- alias: Gangkast Off After Door Closed
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.gangkast_deur
+    to: 'off'
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: light.gangkast
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.gangkast_automatic
+      state: 'on'
+  action:
+  - service: light.turn_off
+    entity_id: light.gangkast
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.gangkast_automatic

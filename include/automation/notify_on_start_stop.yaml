@@ -1,0 +1,21 @@
+- id: "HASS: Startup Notification"
+  alias: 'HASS: Startup Notification'
+  trigger:
+    - platform: homeassistant
+      event: start
+  action:
+    service: notify.mobile_app_rick_iphone11
+    data:
+      title: "Reykjavikstraat"
+      message: "Hass started"
+
+- id: "HASS: Stop Notification"
+  alias: 'HASS: Stop Notification'
+  trigger:
+    - platform: homeassistant
+      event: shutdown
+  action:
+    service: notify.mobile_app_rick_iphone11
+    data:
+      title: "Reykjavikstraat"
+      message: "Hass stopped"

@@ -1,0 +1,12 @@
+- alias: Wasmachine Ready
+  trigger:
+    platform: state
+    entity_id: binary_sensor.wasmachine_status
+    to: 'off'
+  action:
+  - service: notify.telegram_dithuis
+    data:
+      message: De wasmachine is klaar! 🧺
+  - service: notify.woonkamer_lg_tv
+    data:
+      message: De wasmachine is klaar!

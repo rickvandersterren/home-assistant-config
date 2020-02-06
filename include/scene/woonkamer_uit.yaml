@@ -1,0 +1,25 @@
+name: Woonkamer uit
+entities:
+  light.keuken_spot_1:
+    state: off
+  light.keuken_spot_2:
+    state: off
+  light.keuken_spot_3:
+    state: off
+
+  light.woonkamer_spot_1:
+    state: off
+  light.woonkamer_spot_2:
+    state: off
+  light.woonkamer_spot_3:
+    state: off
+
+  light.tv_lamp:
+    state: off
+  light.staande_lamp:
+    state: off
+  light.led_tv_meubel:
+    state: off
+    
+  light.fibaro_system_fgd212_dimmer_2_level_2:
+    state: off

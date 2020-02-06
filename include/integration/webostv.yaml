@@ -1,0 +1,2 @@
+host: !secret webostv_woonkamer_host
+name: Woonkamer - LG TV

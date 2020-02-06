@@ -1,0 +1,14 @@
+---
+badkamer_fel:
+  sequence:
+    - service: light.turn_on
+      entity_id: light.badkamer_spots
+      data:
+        brightness: 254
+        transition: 1
+    - delay: '00:00:01'
+    - service: light.turn_on
+      entity_id: light.badkamer_spots
+      data:
+        color_temp: 370
+        transition: 1

@@ -1,0 +1,50 @@
+- alias: Woonkamer ON when someone comes home after sunset
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.fibaro_system_fgms001_zw5_motion_sensor_sensor
+    to: 'on'
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: group.someone_home
+      state: 'not_home'
+    - condition: state
+      entity_id: group.woonkamer_lights
+      state: 'off'
+    - condition: state
+      entity_id: sun.sun
+      state: 'below_horizon'
+  action:
+  - service: notify.mobile_app_rick_iphone11
+    data:
+      title: "Na zonsondergang - Gang motion"
+      message: "Woonkamer lampen gaan aan"
+  - service: scene.turn_on
+    entity_id: scene.woonkamer_aan
+
+- alias: Voordeur open Woonkamer On when someone comes home 
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.magnet_gang_voordeur_contact
+    to: 'on'
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: group.someone_home
+      state: 'not_home'
+    - condition: state
+      entity_id: group.woonkamer_lights
+      state: 'off'
+    - condition: state
+      entity_id: sun.sun
+      state: 'below_horizon'
+  action:
+  - service: notify.mobile_app_rick_iphone11
+    data:
+      title: "Na zonsondergang - Voordeur open"
+      message: "Woonkamer lampen gaan aan"
+  - service: scene.turn_on
+    entity_id: scene.woonkamer_aan
+

@@ -1,0 +1,19 @@
+- platform: template
+  sensors:
+    roomba_status:
+      friendly_name: 'Roomba - Status'
+      icon_template: "mdi:robot-vacuum"
+      value_template: "{{ state_attr('vacuum.roomba', 'status') }}"
+
+    gangkast_deur:
+      friendly_name: 'Gangkast - Deur'
+      value_template: "{{ is_state('sensor.fibaro_system_fgdw002_door_opening_sensor_2_access_control', '22') if states('sensor.fibaro_system_fgdw002_door_opening_sensor_2_access_control') in ['22','23'] else states('binary_sensor.fibaro_system_fgdw002_door_opening_sensor_2_sensor') }}"
+
+    garage_lastip:
+      friendly_name: 'Garage - Last IP'
+      value_template: '{{ states.sensor.garage_json.attributes["IP"] }}'
+
+    garage_timestamp:
+      friendly_name: 'Garage - Last Call'
+      value_template: '{{ states.sensor.garage_json.attributes["timestamp"] | timestamp_local }}'
+      device_class: timestamp

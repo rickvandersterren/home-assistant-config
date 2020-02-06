@@ -1,0 +1,40 @@
+---
+## Home Assistant configuration
+
+## Core
+default_config:
+homeassistant:          !include include/core/homeassistant.yaml
+frontend:               !include include/core/frontend.yaml
+http:                   !include include/core/http.yaml
+recorder:               !include include/core/recorder.yaml
+tts:                    !include include/core/tts.yaml
+
+scene:                  !include_dir_list include/scene
+automation:             !include_dir_merge_list include/automation
+sensor:                 !include_dir_merge_list include/sensor
+light:                  !include_dir_merge_list include/light
+script:                 !include_dir_merge_named include/script
+
+## Entities
+counter:                !include include/entities/counter.yaml
+binary_sensor:          !include include/entities/binary_sensor.yaml
+group:                  !include include/entities/group.yaml
+input_boolean:          !include include/entities/input_boolean.yaml
+rest_command:           !include include/entities/rest_command.yaml
+zone:                   !include include/entities/zone.yaml
+
+## Integrations
+camera:                 !include include/integration/camera.yaml
+mqtt:                   !include include/integration/mqtt.yaml
+influxdb:               !include include/integration/influxdb.yaml
+device_tracker:         !include include/integration/device_tracker.yaml
+google_assistant:       !include include/integration/google_assistant.yaml
+homekit:                !include include/integration/homekit.yaml
+vacuum:                 !include include/integration/vacuum.yaml
+webostv:                !include include/integration/webostv.yaml
+zwave:                  !include include/integration/zwave.yaml
+
+## Notify
+ios:                    !include include/notify/ios.yaml
+telegram_bot:           !include include/notify/telegram_bot.yaml
+notify:                 !include include/notify/notify.yaml

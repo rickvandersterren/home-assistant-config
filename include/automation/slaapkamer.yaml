@@ -1,0 +1,68 @@
+- alias: Slaapkamer Plafond Toggle lights
+  trigger:
+  - platform: state
+    entity_id: sensor.button_slaapkamer_click
+    to: 'right'
+  - platform: state
+    entity_id: sensor.button_slaapkamer_rick_click
+    to: 'double'
+  - platform: state
+    entity_id: sensor.button_slaapkamer_rebecca_click
+    to: 'double'
+  action:
+  - service: light.toggle
+    entity_id: light.slaapkamer_plafond
+
+- alias: Slaapkamer Bol Toggle lights
+  trigger:
+  - platform: state
+    entity_id: sensor.button_slaapkamer_click 
+    to: 'left'
+  - platform: state
+    entity_id: sensor.button_slaapkamer_rick_click
+    to: 'single'
+  - platform: state
+    entity_id: sensor.button_slaapkamer_rebecca_click
+    to: 'single'
+  action:
+  - service: light.toggle
+    entity_id: light.slaapkamer_bol
+
+- alias: Woonkamer Uit Toggle Slaapkamer button
+  trigger:
+  - platform: state
+    entity_id: sensor.button_slaapkamer_click
+    to: 'both_long'
+  - platform: state
+    entity_id: sensor.button_slaapkamer_rick_action
+    to: 'hold'
+  - platform: state
+    entity_id: sensor.button_slaapkamer_rebecca_action
+    to: 'hold'
+  condition:
+  - condition: state
+    entity_id: group.woonkamer_lights
+    state: 'on'    
+  action:
+  - service: scene.turn_on
+    entity_id: scene.woonkamer_uit
+
+- alias: Woonkamer Aan Toggle Slaapkamer button
+  trigger:
+  - platform: state
+    entity_id: sensor.button_slaapkamer_click
+    to: 'both_long'
+  - platform: state
+    entity_id: sensor.button_slaapkamer_rick_action
+    to: 'hold'
+  - platform: state
+    entity_id: sensor.button_slaapkamer_rebecca_action
+    to: 'hold'
+  condition:
+  - condition: state
+    entity_id: group.woonkamer_lights            
+    state: 'off'
+  action:
+  - service: scene.turn_on
+    entity_id: scene.woonkamer_aan 
+

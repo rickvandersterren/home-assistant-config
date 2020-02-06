@@ -1,0 +1,34 @@
+- alias: Parkeergarage open
+  trigger:
+  - platform: state
+    entity_id: input_boolean.parkeergarage
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: input_boolean.parkeergarage
+    state: 'on'
+  action:
+  - service: notify.mobile_app_rick_iphone11
+    data:
+      message: "Parkeergarage > open"
+  - service: rest_command.parkeergarage
+  - delay: 00:00:05
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.parkeergarage
+
+- alias: Trigger parkeergarage
+  trigger:
+  - platform: state
+    entity_id: sensor.bimmer_last_event
+    to: 'ComesHome'
+  - platform: state
+    entity_id: sensor.bimmer_last_event
+    to: 'Leaving'
+  - platform: event
+    event_type: ios.action_fired
+    event_data:
+      actionName: Parkeergarage_open
+  action:
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.parkeergarage
+

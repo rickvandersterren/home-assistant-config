@@ -1,0 +1,36 @@
+- alias: Badkamer Toggle lights
+  trigger:
+  - platform: state
+    entity_id: sensor.button_badkamer_click
+    to: 'single'
+  action:
+  - service: light.toggle
+    entity_id: light.badkamer_spots
+
+- alias: Badkamer Fel lights
+  trigger:
+  - platform: state
+    entity_id: sensor.button_badkamer_click
+    to: 'double'
+  condition:
+  - condition: state
+    entity_id: input_boolean.badkamer_state_scene
+    state: 'off'
+  action:
+  - service: script.badkamer_fel
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.badkamer_state_scene
+
+- alias: Badkamer Donker lights
+  trigger:
+  - platform: state
+    entity_id: sensor.button_badkamer_click
+    to: 'double'
+  condition:
+  - condition: state
+    entity_id: input_boolean.badkamer_state_scene
+    state: 'on'
+  action:
+  - service: script.badkamer_donker
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.badkamer_state_scene

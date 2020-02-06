@@ -1,0 +1,4 @@
+- platform:    waze_travel_time
+  origin:      !secret waze_travel_time_home
+  destination: !secret waze_travel_time_work_rick
+  region:      'EU'

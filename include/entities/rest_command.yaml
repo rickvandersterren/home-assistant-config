@@ -1,0 +1,4 @@
+parkeergarage:
+  url:      !secret parkeergarage_url
+  username: !secret parkeergarage_user
+  password: !secret parkeergarage_pass

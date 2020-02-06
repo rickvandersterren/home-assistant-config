@@ -1,0 +1,6 @@
+kattenbak:
+  name:    Bezoekjes kattenbak
+  initial: 0
+  restore: true
+  step:    1
+  icon:    mdi:emoticon-poop

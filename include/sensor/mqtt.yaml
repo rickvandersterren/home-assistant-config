@@ -1,0 +1,64 @@
+- platform: mqtt
+  name: "Woonkamer Co2"
+  state_topic: "home/D1Woonkamer/CO2/PPM"
+  unit_of_measurement: "ppm"
+
+- platform: mqtt
+  name: "Woonkamer Temperatuur"
+  state_topic: "home/D1Woonkamer/Temperature/Temperature"
+  unit_of_measurement: "°C"
+  device_class: temperature
+
+- platform: mqtt
+  name: "Woonkamer Luchtvochtigheid"
+  state_topic: "home/D1Woonkamer/Temperature/Humidity"
+  unit_of_measurement: "%"
+  device_class: humidity
+ 
+- platform: mqtt
+  name: "Woonkamer Barometer"
+  state_topic: "home/D1Woonkamer/Temperature/Pressure"
+  unit_of_measurement: "hPa"
+  device_class: pressure
+
+- platform: mqtt
+  name: "Meterkast Temperatuur"
+  state_topic: "home/MCUMeterkast/Meterkast/Temperature"
+  unit_of_measurement: "°C"
+  device_class: temperature
+
+- platform: mqtt
+  name: "Meterkast Luchtvochtigheid"
+  state_topic: "home/MCUMeterkast/Meterkast/Humidity"
+  unit_of_measurement: "%"
+  device_class: humidity
+ 
+- platform: mqtt
+  name: "Stadsverwarming In Temperatuur"
+  state_topic: "home/MCUMeterkast/StadsverwarmingIn/Temperature"
+  unit_of_measurement: "°C"
+  device_class: temperature
+
+- platform: mqtt
+  name: "Stadsverwarming Out Temperatuur"
+  state_topic: "home/MCUMeterkast/StadsverwarmingOut/Temperature"
+  unit_of_measurement: "°C"
+  device_class: temperature
+
+- platform: mqtt
+  name: "Werkkamer Temperatuur"
+  state_topic: "home/MCUWerkkamer/TempHum/Temperature"
+  unit_of_measurement: "°C"
+  device_class: temperature
+
+- platform: mqtt
+  name: "Werkkamer Luchtvochtigheid"
+  state_topic: "home/MCUWerkkamer/TempHum/Humidity"
+  unit_of_measurement: "%"
+  device_class: humidity
+
+- platform: mqtt
+  name: "Bimmer Last Event"
+  state_topic: "home/traccar-events/geofence"
+  availability_topic: "home/traccar-events/status"
+  icon: "mdi:car"

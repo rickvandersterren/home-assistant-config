@@ -1,0 +1,61 @@
+- id: '1576319746465'
+  alias: 'Kattenbak: +1 counter'
+  description: ''
+  trigger:
+  - entity_id: binary_sensor.0x00158d000451248b_occupancy
+    platform: state
+    to: 'on'
+  action:
+  - data:
+      entity_id: counter.kattenbak
+    entity_id: counter.kattenbak
+    service: counter.increment
+
+- id: '1576933555261'
+  alias: 'Kattenbak: notificatie'
+  description: ''
+  trigger:
+  - entity_id: binary_sensor.0x00158d000451248b_occupancy
+    from: 'on'
+    platform: state
+    to: 'off'
+  action:
+  - data:
+      data:
+        push:
+          category: kattenbak
+        apns_headers:
+          'apns-collapse-id': 'kattenbak'
+      message: De kattenbak is {{ states('counter.kattenbak') }} keer gebruikt.
+      title: Poesbericht 💩
+    service: notify.mobile_app_rick_iphone11
+
+- id: '1578222211135'
+  alias: 'Kattenbak: iOS event (COUNTER_MINEEN)'
+  description: ''
+  trigger:
+  - event_data:
+      actionName: COUNTER_MINEEN
+    event_type: ios.notification_action_fired
+    platform: event
+  condition: []
+  action:
+  - data:
+      entity_id: counter.kattenbak
+    entity_id: counter.kattenbak
+    service: counter.decrement
+    
+- id: '1578222322340'
+  alias: 'Kattenbak: iOS event (COUNTER_RESET)'
+  description: ''
+  trigger:
+  - event_data:
+      actionName: COUNTER_RESET
+    event_type: ios.notification_action_fired
+    platform: event
+  condition: []
+  action:
+  - data:
+      entity_id: counter.kattenbak
+    entity_id: counter.kattenbak
+    service: counter.reset

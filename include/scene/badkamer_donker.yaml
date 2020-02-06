@@ -1,0 +1,7 @@
+name: Badkamer Donker
+entities:
+  light.badkamer_spots:
+    state:      on
+    brightness: 1
+    color_temp: 454
+    transition: 1

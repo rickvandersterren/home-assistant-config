@@ -1,0 +1,42 @@
+name: Woonkamer TV/Film
+entities:
+  light.keuken_spot_1:
+    state: on
+    brightness: 180
+    color_temp: 420
+  light.keuken_spot_2:
+    state: on
+    brightness: 180
+    color_temp: 420
+  light.keuken_spot_3:
+    state: off
+
+  light.woonkamer_spot_1:
+    state: on
+    brightness: 180
+    color_temp: 420
+  light.woonkamer_spot_2:
+    state: on
+    brightness: 180
+    color_temp: 420
+  light.woonkamer_spot_3:
+    state: off
+
+
+  light.tv_lamp:
+    state: on
+    brightness: 225
+    rgb_color: [255,145,36]
+  light.staande_lamp:
+    state: on
+    brightness: 225
+    rgb_color: [255,145,36]
+  light.led_tv_meubel:
+    state: on
+    brightness: 254
+    rgb_color: [255,163,36]
+
+
+  light.fibaro_system_fgd212_dimmer_2_level_2:
+    state: on
+    brightness: 140

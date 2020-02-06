@@ -1,0 +1,24 @@
+push:
+  categories:
+    - name: Vacuum
+      identifier: 'vacuum'
+      actions:
+        - identifier: 'RUN_VACUUM'
+          title: 'Ja, stofzuigen maar!' 
+          activationMode: 'background'
+          authenticationRequired: true
+    - name: Kattenbak
+      identifier: 'kattenbak'
+      actions:
+        - identifier: 'COUNTER_MINEEN'
+          title: '-1'
+          activationMode: 'background'
+          authenticationRequired: false
+          destructive: false
+          behavior: 'default'
+        - identifier: 'COUNTER_RESET'
+          title: 'Reset counter'
+          activationMode: 'background'
+          authenticationRequired: true
+          destructive: true
+          behavior: 'default'

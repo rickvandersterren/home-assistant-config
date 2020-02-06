@@ -1,0 +1,37 @@
+- alias: Gang Spots On After Motion Detected
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.fibaro_system_fgms001_zw5_motion_sensor_sensor
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: light.gang_spots
+    state: 'off'
+  action:
+  - service: light.turn_on
+    entity_id: light.gang_spots
+    data_template:
+      brightness: '{% if now().hour > 21 %}40 {% elif now().hour < 8 %}1 {% else %}255{% endif %}'
+      transition: 1
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.gang_automatic
+
+- alias: Gang Spots Off After Nomore Motion Detected
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.fibaro_system_fgms001_zw5_motion_sensor_sensor
+    to: 'off'
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: light.gang_spots
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.gang_automatic
+      state: 'on'
+  action:
+  - service: light.turn_off
+    entity_id: light.gang_spots
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.gang_automatic

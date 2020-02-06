@@ -1,0 +1,4 @@
+---
+- name:     telegram-dithuis
+  platform: telegram
+  chat_id:  !secret telegram_bot_chatid_dithuis
