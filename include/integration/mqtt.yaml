@@ -1,5 +1,7 @@
 discovery: true
 broker:    !secret mqtt_broker
+username:  !secret mqtt_username
+password:  !secret mqtt_password
 birth_message:
   topic:   'hass/status'
   payload: 'online'
