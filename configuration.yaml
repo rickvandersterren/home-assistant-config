@@ -8,6 +8,7 @@ frontend:               !include include/core/frontend.yaml
 http:                   !include include/core/http.yaml
 recorder:               !include include/core/recorder.yaml
 tts:                    !include include/core/tts.yaml
+panel_iframe:           !include include/core/panel_iframe.yaml
 
 scene:                  !include_dir_list include/scene
 automation:             !include_dir_merge_list include/automation

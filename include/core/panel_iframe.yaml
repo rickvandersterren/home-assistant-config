@@ -1,0 +1,6 @@
+---
+z2massistant:
+  title: 'Z2M Assistant'
+  url:   !secret z2massistant_url
+  icon:  mdi:access-point-network
+  require_admin: true
