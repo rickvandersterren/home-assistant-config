@@ -12,10 +12,26 @@
 
     wasmachine_status:
       friendly_name: "Wasmachine - Status"
-      icon_template: "mdi:washing-machine"
+      icon_template: >
+        {% if is_state('binary_sensor.wasmachine_status','on') %} mdi:washing-machine
+        {% else %} mdi:washing-machine-off
+        {% endif %}
       delay_on:
         minutes: 3
       delay_off:
         minutes: 3
       value_template: >-
         {{ states('sensor.fibaro_system_fgwpe_f_wall_plug_gen5_power')|float > 5 }}
+
+    dishwasher_status:
+      friendly_name: "Vaatwasser - Status"
+      icon_template: >
+        {% if is_state('binary_sensor.dishwasher_status','on') %} mdi:dishwasher
+        {% else %} mdi:dishwasher-off
+        {% endif %}
+      delay_on:
+        minutes: 2
+      delay_off:
+        minutes: 5
+      value_template: >-
+        {{ states('sensor.0x00158d0003891669_power')|float > 5 }}

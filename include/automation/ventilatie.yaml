@@ -1,3 +1,4 @@
+---
 - alias: Badkamer Ventilatie On
   trigger:
   - platform: state
@@ -29,3 +30,39 @@
     entity_id: light.qubino_goap_zmnhvdx_flush_dimmer_0_10v_level
     data:
       brightness: 75
+
+- alias: Badkamer Ventilatie Luchtvochtigheid On
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.0x00158d00044a1a47_humidity
+    above: 58
+    for:
+      minutes: 2
+  condition:
+  - condition: numeric_state
+    entity_id: light.qubino_goap_zmnhvdx_flush_dimmer_0_10v_level
+    value_template: '{% if states.light.qubino_goap_zmnhvdx_flush_dimmer_0_10v_level.state == "on"  %}{{ states.light.qubino_goap_zmnhvdx_flush_dimmer_0_10v_level.attributes.brightness }}{% else %}0{% endif %}'
+    below: 254
+  action:
+  - service: light.turn_on
+    entity_id: light.qubino_goap_zmnhvdx_flush_dimmer_0_10v_level
+    data:
+      brightness: 255
+
+- alias: Badkamer Ventilatie Luchtvochtigheid Off
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.0x00158d00044a1a47_humidity
+    below: 58
+    for:
+      minutes: 5
+  condition:
+  - condition: numeric_state
+    entity_id: light.qubino_goap_zmnhvdx_flush_dimmer_0_10v_level
+    value_template: '{% if states.light.qubino_goap_zmnhvdx_flush_dimmer_0_10v_level.state == "on"  %}{{ states.light.qubino_goap_zmnhvdx_flush_dimmer_0_10v_level.attributes.brightness }}{% else %}0{% endif %}'
+    above: 254
+  action:
+  - service: light.turn_on
+    entity_id: light.qubino_goap_zmnhvdx_flush_dimmer_0_10v_level
+    data:
+      brightness: 40

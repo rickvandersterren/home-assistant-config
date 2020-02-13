@@ -1,3 +1,4 @@
+---
 - platform:  history_stats
   name:      Vacuuming Time Today
   entity_id: vacuum.roomba
@@ -10,6 +11,22 @@
   name:      Vacuuming Time Week
   entity_id: vacuum.roomba
   state:     'on'
+  type:      time
+  start:     '{{ as_timestamp( now().replace(hour=0).replace(minute=0).replace(second=0) ) - now().weekday() * 86400 }}'
+  end:       '{{ now() }}'
+
+- platform:  history_stats
+  name:      Time Rick at Work (Today)
+  entity_id: person.rick
+  state:     'Work Rick'
+  type:      time
+  start:     '{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}'
+  end:       '{{ now() }}'
+
+- platform:  history_stats
+  name:      Time Rick at Work (Week)
+  entity_id: person.rick
+  state:     'Work Rick'
   type:      time
   start:     '{{ as_timestamp( now().replace(hour=0).replace(minute=0).replace(second=0) ) - now().weekday() * 86400 }}'
   end:       '{{ now() }}'

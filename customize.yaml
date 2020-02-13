@@ -1,8 +1,5 @@
 binary_sensor.fibaro_system_fgms001_zw5_motion_sensor_sensor:
   icon: mdi:walk
-light.led_tv_meubel: {}
-binary_sensor.wasmachine_status:
-  icon: mdi:washing-machine
 switch.sonoff_plug2:
   icon: mdi:air-filter
 switch.sonoff_plug1:
