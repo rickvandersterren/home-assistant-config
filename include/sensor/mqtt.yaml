@@ -46,18 +46,6 @@
   device_class: temperature
 
 - platform: mqtt
-  name: "Werkkamer Temperatuur"
-  state_topic: "home/MCUWerkkamer/TempHum/Temperature"
-  unit_of_measurement: "°C"
-  device_class: temperature
-
-- platform: mqtt
-  name: "Werkkamer Luchtvochtigheid"
-  state_topic: "home/MCUWerkkamer/TempHum/Humidity"
-  unit_of_measurement: "%"
-  device_class: humidity
-
-- platform: mqtt
   name: "Bimmer Last Event"
   state_topic: "home/traccar-events/geofence"
   availability_topic: "home/traccar-events/status"

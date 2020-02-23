@@ -2,6 +2,7 @@
   trigger:
     platform: state
     entity_id: binary_sensor.wasmachine_status
+    from: 'on'
     to: 'off'
   action:
   - service: notify.telegram_dithuis
@@ -10,3 +11,19 @@
   - service: notify.woonkamer_lg_tv
     data:
       message: De wasmachine is klaar!
+  - service: input_datetime.set_datetime
+    entity_id: input_datetime.wasmachine_done
+    data_template:
+      datetime: "{{ now().strftime('%Y-%m-%d %H:%M:%S') }}"
+
+- alias: Wasmachine Started
+  trigger:
+    platform: state
+    entity_id: binary_sensor.wasmachine_status
+    from: 'off'
+    to: 'on'
+  action:
+    service: input_datetime.set_datetime
+    entity_id: input_datetime.wasmachine_started
+    data_template:
+      datetime: "{{ now().strftime('%Y-%m-%d %H:%M:%S') }}"

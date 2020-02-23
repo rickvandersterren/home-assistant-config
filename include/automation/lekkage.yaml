@@ -1,4 +1,8 @@
-- alias: Lekkage detected on
+---
+##
+## WASMACHINE
+##
+- alias: Wasmachine - Lekkage detected on
   trigger:
     - platform: state
       entity_id: binary_sensor.leak_wasmachine_water_leak
@@ -9,7 +13,7 @@
         title: "Lekkage - Wasmachine"
         message: "Water gedetecteerd op sensor"
 
-- alias: Lekkage detected on
+- alias: Wasmachine - Lekkage detected on
   trigger:
     - platform: state
       entity_id: binary_sensor.leak_wasmachine_water_leak
@@ -20,3 +24,28 @@
         title: "Lekkage - Wasmachine"
         message: "Geen water meer gedetecteerd op sensor"
 
+##
+## KEUKEN
+##
+
+- alias: Keuken - Lekkage detected on
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.0x00158d0004600904_water_leak
+      to: 'on'
+  action:
+    - service: notify.mobile_app_rick_iphone11
+      data:
+        title: "Lekkage - Keuken"
+        message: "Water gedetecteerd op sensor"
+
+- alias: Keuken - Lekkage detected on
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.0x00158d0004600904_water_leak
+      to: 'off'
+  action:
+    - service: notify.mobile_app_rick_iphone11
+      data:
+        title: "Lekkage - Keuken"
+        message: "Geen water meer gedetecteerd op sensor"

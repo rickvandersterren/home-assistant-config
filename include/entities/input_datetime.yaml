@@ -1,0 +1,20 @@
+---
+wasmachine_started:
+  name: Washing machine last started
+  has_date: true
+  has_time: true
+
+wasmachine_done:
+  name: Washing machine last done
+  has_date: true
+  has_time: true
+
+dishwasher_started:
+  name: Dishwasher last started
+  has_date: true
+  has_time: true
+
+dishwasher_done:
+  name: Dishwasher last done
+  has_date: true
+  has_time: true

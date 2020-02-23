@@ -21,6 +21,7 @@ counter:                !include include/entities/counter.yaml
 binary_sensor:          !include include/entities/binary_sensor.yaml
 group:                  !include include/entities/group.yaml
 input_boolean:          !include include/entities/input_boolean.yaml
+input_datetime:         !include include/entities/input_datetime.yaml
 rest_command:           !include include/entities/rest_command.yaml
 zone:                   !include include/entities/zone.yaml
 
@@ -33,6 +34,7 @@ google_assistant:       !include include/integration/google_assistant.yaml
 homekit:                !include include/integration/homekit.yaml
 vacuum:                 !include include/integration/vacuum.yaml
 webostv:                !include include/integration/webostv.yaml
+weather:                !include include/integration/weather.yaml
 zwave:                  !include include/integration/zwave.yaml
 
 ## Notify

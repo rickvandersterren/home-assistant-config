@@ -1,3 +1,4 @@
+---
 - alias: Luchtverfrisser On Weekend
   trigger:
   - platform: time
@@ -9,7 +10,7 @@
     - sun
   action:
     service: switch.turn_on
-    entity_id: switch.sonoff_plug2
+    entity_id: switch.0x00158d000388f092_switch
 
 - alias: Luchtverfrisser Off Weekend
   trigger:
@@ -22,4 +23,4 @@
     - sun
   action:
     service: switch.turn_off
-    entity_id: switch.sonoff_plug2
+    entity_id: switch.0x00158d000388f092_switch

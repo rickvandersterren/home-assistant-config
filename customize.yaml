@@ -1,11 +1,7 @@
 binary_sensor.fibaro_system_fgms001_zw5_motion_sensor_sensor:
   icon: mdi:walk
-switch.sonoff_plug2:
+switch.0x00158d000388f092_switch:
   icon: mdi:air-filter
-switch.sonoff_plug1:
-  icon: mdi:fountain
-switch.sonoff_ventilatie:
-  icon: mdi:fan
 person.rick:
   entity_picture: '"https://www.rickes.nl/images/avatar.jpg"'
 device_tracker.bimmer:
@@ -15,3 +11,5 @@ person.rebecca:
   entity_picture: '"https://pbs.twimg.com/profile_images/897429137958350848/srWELOKn_400x400.jpg"'
 group.someone_home:
   entity_picture: https://pbs.twimg.com/media/D0fYhXqXcAE8mwb.jpg
+switch.0x00158d00038944fd_switch:
+  icon: mdi:fountain
