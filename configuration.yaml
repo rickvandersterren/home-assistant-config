@@ -11,7 +11,8 @@ tts:                    !include include/core/tts.yaml
 panel_iframe:           !include include/core/panel_iframe.yaml
 
 scene:                  !include_dir_list include/scene
-automation:             !include_dir_merge_list include/automation
+automation old:         !include_dir_merge_list include/automation
+automation:             !include automations.yaml
 sensor:                 !include_dir_merge_list include/sensor
 light:                  !include_dir_merge_list include/light
 script:                 !include_dir_merge_named include/script

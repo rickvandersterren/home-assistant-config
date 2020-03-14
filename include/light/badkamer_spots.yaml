@@ -1,8 +1,8 @@
 - platform:           mqtt
   schema:             json
   name:               Badkamer Spots
-  command_topic:      "zigbee2mqtt/badkamer_spots/set"
-  state_topic:        "zigbee2mqtt/badkamer_spots"
+  command_topic:      "zigbee2mqtt/group_badkamer_spots/set"
+  state_topic:        "zigbee2mqtt/group_badkamer_spots"
   availability_topic: "zigbee2mqtt/bridge/state"
   color_temp:         true
   brightness:         true

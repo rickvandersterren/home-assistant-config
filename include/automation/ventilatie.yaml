@@ -34,7 +34,7 @@
 - alias: Badkamer Ventilatie Luchtvochtigheid On
   trigger:
   - platform: numeric_state
-    entity_id: sensor.0x00158d00044a1a47_humidity
+    entity_id: sensor.badkamer_humidity
     above: 58
     for:
       minutes: 2
@@ -52,7 +52,7 @@
 - alias: Badkamer Ventilatie Luchtvochtigheid Off
   trigger:
   - platform: numeric_state
-    entity_id: sensor.0x00158d00044a1a47_humidity
+    entity_id: sensor.badkamer_humidity
     below: 58
     for:
       minutes: 5

@@ -2,7 +2,7 @@
   alias: 'Kattenbak: +1 counter'
   description: ''
   trigger:
-  - entity_id: binary_sensor.0x00158d000451248b_occupancy
+  - entity_id: binary_sensor.motion_kattenbak_occupancy
     platform: state
     to: 'on'
   action:
@@ -15,7 +15,7 @@
   alias: 'Kattenbak: notificatie'
   description: ''
   trigger:
-  - entity_id: binary_sensor.0x00158d000451248b_occupancy
+  - entity_id: binary_sensor.motion_kattenbak_occupancy
     from: 'on'
     platform: state
     to: 'off'

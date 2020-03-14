@@ -5,7 +5,7 @@
 - alias: Wasmachine - Lekkage detected on
   trigger:
     - platform: state
-      entity_id: binary_sensor.leak_wasmachine_water_leak
+      entity_id: binary_sensor.gangkast_water_leak
       to: 'on'
   action:
     - service: notify.mobile_app_rick_iphone11
@@ -16,7 +16,7 @@
 - alias: Wasmachine - Lekkage detected on
   trigger:
     - platform: state
-      entity_id: binary_sensor.leak_wasmachine_water_leak
+      entity_id: binary_sensor.gangkast_water_leak
       to: 'off'
   action:
     - service: notify.mobile_app_rick_iphone11

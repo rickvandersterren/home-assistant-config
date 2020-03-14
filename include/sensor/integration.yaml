@@ -1,6 +1,6 @@
 ---
 - platform: integration
-  source: sensor.0x00158d0003891669_power
+  source: sensor.switch_vaatwasser_power
   name: dishwasher_energy_spent
   unit_prefix: k
   round: 2

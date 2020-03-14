@@ -6,7 +6,6 @@
   action:
     service: notify.mobile_app_rick_iphone11
     data:
-      title: "Reykjavikstraat"
       message: "Hass started"
       data:
         apns_headers:
@@ -20,7 +19,6 @@
   action:
     service: notify.mobile_app_rick_iphone11
     data:
-      title: "Reykjavikstraat"
       message: "Hass stopped"
       data:
         apns_headers:

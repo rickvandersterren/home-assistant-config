@@ -1,8 +1,8 @@
 - platform:           mqtt
   schema:             json
   name:               Gang Spots
-  command_topic:      "zigbee2mqtt/gang_spots/set"
-  state_topic:        "zigbee2mqtt/gang_spots"
+  command_topic:      "zigbee2mqtt/group_gang_spots/set"
+  state_topic:        "zigbee2mqtt/group_gang_spots"
   availability_topic: "zigbee2mqtt/bridge/state"
   color_temp:         true
   brightness:         true

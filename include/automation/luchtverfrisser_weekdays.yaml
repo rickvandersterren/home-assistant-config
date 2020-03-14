@@ -15,7 +15,7 @@
     - fri
   action:
     service: switch.turn_on
-    entity_id: switch.0x00158d000388f092_switch
+    entity_id: switch.luchtverfrisser
 
 - alias: Luchtverfrisser Off Weekdays
   trigger:
@@ -33,4 +33,4 @@
     - fri
   action:
     service: switch.turn_off
-    entity_id: switch.0x00158d000388f092_switch
+    entity_id: switch.luchtverfrisser

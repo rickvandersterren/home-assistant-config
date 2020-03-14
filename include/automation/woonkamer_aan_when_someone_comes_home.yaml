@@ -26,7 +26,7 @@
 - alias: Voordeur open Woonkamer On when someone comes home 
   trigger:
   - platform: state
-    entity_id: binary_sensor.magnet_gang_voordeur_contact
+    entity_id: binary_sensor.magnet_voordeur_contact
     to: 'on'
   condition:
     condition: and
