@@ -29,11 +29,11 @@ entities:
   light.tv_lamp:
     state: on
     brightness: 250
-    rgb_color: [255,145,36]
+    rgb_color: [255,163,74]
   light.staande_lamp:
     state: on
     brightness: 250
-    rgb_color: [255,145,36]
+    rgb_color: [255,163,74]
   light.led_tv_meubel:
     state: on
     brightness: 254

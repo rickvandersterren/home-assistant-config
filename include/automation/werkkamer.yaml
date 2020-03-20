@@ -1,8 +1,8 @@
-- alias: Werkkamer trigger
+- alias: Werkkamer Toggle
   trigger:
   - platform: state
-    entity_id: sensor.0x90fd9ffffe939906_action
-    to: 'toggle'
+    entity_id: sensor.button_werkkamer_click
+    to: 'single'
   action:
   - service: light.toggle
     entity_id: light.werkkamer
