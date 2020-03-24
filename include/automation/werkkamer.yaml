@@ -3,6 +3,33 @@
   - platform: state
     entity_id: sensor.button_werkkamer_click
     to: 'single'
+  - platform: state
+    entity_id: sensor.0xccccccfffee59767_action
+    to: 'skip_forward'
   action:
   - service: light.toggle
     entity_id: light.werkkamer
+
+- alias: Werkkamer Brightness down
+  trigger:
+  - platform: state
+    entity_id: sensor.0xccccccfffee59767_action
+    to: 'rotate_left'
+  action:
+  - service: light.turn_on
+    data:
+      entity_id: light.werkkamer
+      transition: 1
+      brightness_step: -25
+
+- alias: Werkkamer Brightness up
+  trigger:
+  - platform: state
+    entity_id: sensor.0xccccccfffee59767_action
+    to: 'rotate_right'
+  action:
+  - service: light.turn_on
+    data:
+      entity_id: light.werkkamer
+      transition: 1
+      brightness_step: +25

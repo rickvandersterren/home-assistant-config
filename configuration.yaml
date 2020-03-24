@@ -32,6 +32,8 @@ mqtt:                   !include include/integration/mqtt.yaml
 influxdb:               !include include/integration/influxdb.yaml
 device_tracker:         !include include/integration/device_tracker.yaml
 google_assistant:       !include include/integration/google_assistant.yaml
+cast:                   !include include/integration/cast.yaml
+sonos:                  !include include/integration/sonos.yaml
 homekit:                !include include/integration/homekit.yaml
 vacuum:                 !include include/integration/vacuum.yaml
 webostv:                !include include/integration/webostv.yaml

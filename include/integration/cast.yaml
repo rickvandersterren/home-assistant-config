@@ -1,0 +1,5 @@
+---
+media_player:
+  - host: !secret google_chromecast_woonkamer_ip
+  - host: !secret google_chromecast_slaapkamer_ip
+  - host: !secret google_home_werkkamer_ip

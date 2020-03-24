@@ -18,4 +18,4 @@ Please feel free to contact to me if you have any further questions about my set
 [commits]: https://github.com/rickvandersterren/home-assistant-config/commits/master
 [commits-badge]: https://badgen.net/github/commits/rickvandersterren/home-assistant-config
 [hass-version]: https://www.home-assistant.io/latest-release-notes/
-[hass-version-badge]: https://img.shields.io/badge/Home%20Assistant-0.107.4-brightgreen.svg
+[hass-version-badge]: https://img.shields.io/badge/Home%20Assistant-0.107.6-brightgreen.svg

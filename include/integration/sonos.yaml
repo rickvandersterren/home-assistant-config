@@ -1,0 +1,5 @@
+---
+media_player:
+  advertise_addr: !secret host_ip
+  hosts:
+    - !secret sonos_beam_ip
