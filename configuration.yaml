@@ -40,6 +40,7 @@ roomba:                 !include include/integration/roomba.yaml
 webostv:                !include include/integration/webostv.yaml
 weather:                !include include/integration/weather.yaml
 zwave:                  !include include/integration/zwave.yaml
+fan:                    !include include/integration/fan.yaml
 
 ## Notify
 ios:                    !include include/notify/ios.yaml
