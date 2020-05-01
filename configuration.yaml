@@ -23,6 +23,7 @@ binary_sensor:          !include include/entities/binary_sensor.yaml
 group:                  !include include/entities/group.yaml
 input_boolean:          !include include/entities/input_boolean.yaml
 input_datetime:         !include include/entities/input_datetime.yaml
+input_number:           !include include/entities/input_number.yaml
 rest_command:           !include include/entities/rest_command.yaml
 zone:                   !include include/entities/zone.yaml
 
@@ -35,7 +36,7 @@ google_assistant:       !include include/integration/google_assistant.yaml
 cast:                   !include include/integration/cast.yaml
 sonos:                  !include include/integration/sonos.yaml
 homekit:                !include include/integration/homekit.yaml
-vacuum:                 !include include/integration/vacuum.yaml
+roomba:                 !include include/integration/roomba.yaml
 webostv:                !include include/integration/webostv.yaml
 weather:                !include include/integration/weather.yaml
 zwave:                  !include include/integration/zwave.yaml

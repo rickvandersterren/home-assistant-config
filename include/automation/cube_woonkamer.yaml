@@ -1,0 +1,35 @@
+---
+- alias: 'Cube: Woonkamer: rotate_left'
+  initial_state: 'on'
+  trigger:
+    - entity_id: sensor.cube_woonkamer_action
+      platform: state
+      to: rotate_left
+  action:
+    - service: script.brightness_down
+- alias: 'Cube: Woonkamer: rotate_right'
+  initial_state: 'on'
+  trigger:
+    - entity_id: sensor.cube_woonkamer_action
+      platform: state
+      to: rotate_right
+  action:
+    - service: script.brightness_up
+
+- alias: 'Cube: Woonkamer: flip180'
+  trigger:
+  - platform: state
+    entity_id: sensor.cube_woonkamer_action
+    to: 'flip180'
+  action:
+  - service: scene.turn_on
+    entity_id: scene.woonkamer_tv_film
+
+- alias: 'Cube: Woonkamer: shake'
+  trigger:
+  - platform: state
+    entity_id: sensor.cube_woonkamer_action
+    to: 'shake'
+  action:
+  - service: light.toggle
+    entity_id: light.woonkamer_lampen
