@@ -6,11 +6,11 @@
       value_template: "{{ states('light.qubino_goap_zmnhvdx_flush_dimmer_0_10v_level') }}"
       speed_template: >
         {% if states.light.qubino_goap_zmnhvdx_flush_dimmer_0_10v_level.attributes.brightness|int >= 200 %}
-        high
+          high
         {% elif states.light.qubino_goap_zmnhvdx_flush_dimmer_0_10v_level.attributes.brightness|int >= 150 %}
-        medium
+          medium
         {% else %}
-        low
+          low
         {% endif %}
       turn_on:
         service: light.turn_on
