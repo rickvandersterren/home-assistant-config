@@ -7,10 +7,10 @@
     for: "00:10:00"
   condition:
   - condition: state
-    entity_id: vacuum.roomba
-    state: 'off'
+    entity_id: vacuum.consuela
+    state: 'docked'
   action:
-    service: notify.mobile_app_rick_iphone11 
+    service: notify.mobile_app_rick_iphone11
     data:
       title: Niemand meer thuis
       message: Moet Consuela even stofzuigen?
@@ -26,8 +26,8 @@
       actionName: RUN_VACUUM
   condition:
   - condition: state
-    entity_id: vacuum.roomba
-    state: 'off'
+    entity_id: vacuum.consuela
+    state: 'docked'
   action:
   - service: vacuum.start_pause
-    entity_id: vacuum.roomba
+    entity_id: vacuum.consuela
