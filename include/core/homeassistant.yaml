@@ -1,9 +1,10 @@
 ---
-name:        !secret instance_name
-latitude:    !secret zone_home_latitude
-longitude:   !secret zone_home_longitude
-elevation:   0
-unit_system: metric
-time_zone:   Europe/Amsterdam
-customize:   !include ../../customize.yaml
-packages:    !include_dir_named ../package
+name:         !secret instance_name
+latitude:     !secret zone_home_latitude
+longitude:    !secret zone_home_longitude
+elevation:    0
+unit_system:  metric
+time_zone:    Europe/Amsterdam
+customize:    !include ../../customize.yaml
+packages:     !include_dir_named ../package
+external_url: !secret external_url

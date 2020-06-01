@@ -1,5 +1,4 @@
 ---
-base_url:                 !secret base_url
 ip_ban_enabled:           true
 login_attempts_threshold: 15
 use_x_forwarded_for:      true
