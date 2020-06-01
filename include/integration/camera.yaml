@@ -1,6 +1,10 @@
-- platform:   synology
-  url:        !secret camera_synology_url
-  username:   !secret camera_synology_user
-  password:   !secret camera_synology_pass
-  timeout:    15
-  verify_ssl: false
+# - platform:   synology
+#   url:        !secret camera_synology_url
+#   username:   !secret camera_synology_user
+#   password:   !secret camera_synology_pass
+#   timeout:    15
+#   verify_ssl: false
+- platform: foscam
+  ip: !secret foscam_ip
+  username: !secret foscam_username
+  password: !secret foscam_password
